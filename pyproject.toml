@@ -1,0 +1,27 @@
+[project]
+name = "covariate-shift-lab"
+version = "0.1.0"
+description = "Simulation framework for linear regression under covariate shift."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy",
+    "scipy",
+    "pandas",
+    "matplotlib",
+    "scikit-learn",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "jupyter",
+    "ruff",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
