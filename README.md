@@ -46,33 +46,33 @@ $T(n,m,\alpha,p)$ summarizes the scale of pooled target excess risk at unit nois
 
 Let $S_j=j^{-\alpha}/Z_\alpha$ and $T_j=1/p$ be the fractions of source and target variance in coordinate $j$. Both covariance matrices have trace $p$, so $nS_j$ and $mT_j$ are proportional to the expected contributions of the two samples to the pooled Gram matrix in that direction. The set $J^c$ contains the coordinates where the source contributes at least as much as the target. The number $d$ counts the remaining coordinates.
 
-$$
+```math
 J^c=\{j:nS_j\ge mT_j\},
 \qquad
 J=\{1,\ldots,p\}\setminus J^c,
 \qquad
 d=|J|.
-$$
+```
 
 Then
 
-$$
+```math
 \begin{aligned}
 T(n,m,\alpha,p)
 &=\frac d m+\frac1n\sum_{j\in J^c}\frac{T_j}{S_j}\\
 &=\sum_{j=1}^p\min\left\{\frac{T_j}{nS_j},\frac1m\right\}\\
 &=\sum_{j=1}^p\frac{T_j}{\max\{nS_j,mT_j\}}.
 \end{aligned}
-$$
+```
 
 For each coordinate, $T$ takes the smaller of the source risk term $T_j/(nS_j)$ and the target risk term $T_j/(mT_j)=1/m$. Both have the same numerator $T_j$, so the smaller risk term comes from the larger expected information contribution in the denominator.
 
 ### Comparison curves
 
-The pooled OLS fit uses the realized Gram matrix $G=X_S^\top X_S+X_T^\top X_T$. At unit noise variance, the expected target excess risk conditional on that design is $\operatorname{tr}(\Sigma_T G^{-1})$. The **population pooled approximation** is a deterministic risk curve obtained by replacing $G$ by its expectation before inversion.
+The pooled OLS fit uses the realized Gram matrix $G=X_S^\top X_S+X_T^\top X_T$. At unit noise variance, the expected target excess risk conditional on that design is $\mathrm{tr}(\Sigma_T G^{-1})$. The **population pooled approximation** is a deterministic risk curve obtained by replacing $G$ by its expectation before inversion.
 
 $$
-\operatorname{tr}\left(\Sigma_T(n\Sigma_S+m\Sigma_T)^{-1}\right)
+\mathrm{tr}\left(\Sigma_T(n\Sigma_S+m\Sigma_T)^{-1}\right)
 =\sum_{j=1}^p\frac{T_j}{nS_j+mT_j}.
 $$
 
